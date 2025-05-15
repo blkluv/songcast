@@ -17,7 +17,6 @@ SongCast is a platform that enables music artists to create their own social tok
 This repository has been created specifically for hackathon use. It contains a cleaned version of the SongCast application with all sensitive information removed.
 
 **Please read the following files before getting started:**
-- [HACKATHON.md](HACKATHON.md) - Overview and ideas for hackathon projects
 - [API_SETUP.md](API_SETUP.md) - Instructions for setting up required API keys
 
 ## Tech Stack
@@ -97,10 +96,10 @@ This project can be deployed on any platform that supports Next.js, but Vercel i
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the GNU AFFERO GENERAL PUBLIC LICENSE - see the LICENSE file for details.
 
 ## Acknowledgments
 
-- [Base](https://base.org/) - The L2 blockchain powering this application
-- [Zora](https://zora.co/) - NFT infrastructure
+- [Base](https://docs.base.org/) - The L2 blockchain powering this application
+- [Zora](https://docs.zora.co/) - NFT infrastructure
 - [Farcaster](https://www.farcaster.xyz/) - Decentralized social protocol 
