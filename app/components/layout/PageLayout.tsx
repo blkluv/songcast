@@ -53,7 +53,7 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2">
               <div className="flex items-center justify-center w-12 h-12 border-2 border-white bg-woodcut-red">
-                <span className="text-lg font-black text-white">SC</span>
+                <span className="text-lg font-black text-white">JC</span>
               </div>
               <span className="pr-2 text-xl font-black tracking-tight uppercase">JERSEY CLUB</span>
             </Link>
@@ -228,7 +228,7 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <div className="flex items-center justify-center w-10 h-10 border-2 border-white bg-woodcut-red">
-                  <span className="text-sm font-black text-white">SC</span>
+                  <span className="text-sm font-black text-white">JC</span>
                 </div>
                 <span className="text-xl font-black tracking-tight uppercase">JERSEY CLUB</span>
               </div>

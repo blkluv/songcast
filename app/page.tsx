@@ -287,7 +287,7 @@ export default function Home() {
               <div className="relative">
                 {/* Main Logo */}
                 <div className="flex items-center justify-center w-64 h-64 bg-black border-4 border-white md:w-80 md:h-80 lg:w-96 lg:h-96 shadow-woodcut-xl">
-                  <span className="text-6xl font-black tracking-tight text-white uppercase md:text-7xl lg:text-8xl">SC</span>
+                  <span className="text-6xl font-black tracking-tight text-white uppercase md:text-7xl lg:text-8xl">JC</span>
                 </div>
                 
                 {/* Orbiting Coins */}

@@ -119,7 +119,7 @@ export default function FarcasterMiniApp() {
 
             <Button variant="outline" size="sm" onClick={handleDiscoverMusic}>
               <Music size={16} className="mr-2" />
-              Discover Music
+              Discover Musik
             </Button>
           </div>
         </div>
