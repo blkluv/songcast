@@ -290,7 +290,7 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
               <h3 className="mb-4 text-xl font-black tracking-tight uppercase">Connect</h3>
               <div className="flex gap-3">
                 <a 
-                  href="https://twitter.com/dabusthebuilder" 
+                  href="https://twitter.com/jerseyclubtv" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center justify-center w-10 h-10 transition-colors bg-black border-2 border-white hover:bg-woodcut-red"
@@ -300,7 +300,7 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
                   </svg>
                 </a>
                 <a 
-                  href="https://warpcast.com/dabus.eth" 
+                  href="https://warpcast.com/hahz" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center justify-center w-10 h-10 transition-colors bg-black border-2 border-white hover:bg-woodcut-red"

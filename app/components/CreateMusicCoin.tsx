@@ -517,9 +517,9 @@ export default function CreateMusicCoin() {
             transition={{ duration: 0.5 }}
           >
             <div className="mb-10 text-center">
-              <h1 className="mb-3 text-4xl font-bold gradient-text">Create Your Music Coin</h1>
+              <h1 className="mb-3 text-4xl font-bold gradient-text">Create Your Musik Coin</h1>
               <p className="text-muted-foreground">
-                Create a social token for your music that fans can trade and support your journey
+                Create a social token for your Jersey Club musik that fans can trade and support your journey
               </p>
             </div>
 
@@ -537,7 +537,7 @@ export default function CreateMusicCoin() {
                     </div>
                     <h2 className="mb-2 text-2xl font-bold gradient-text">Coin Created Successfully!</h2>
                     <p className="mb-4 text-muted-foreground">
-                      Your music coin "{formState.name}" has been created and is now available for trading.
+                      Your musik coin "{formState.name}" has been created and is now available for trading.
                     </p>
                   </div>
                   
@@ -766,7 +766,7 @@ export default function CreateMusicCoin() {
                               value={formState.name}
                               onChange={handleChange}
                               className="sonic-input"
-                              placeholder="My Music Coin"
+                              placeholder="My Musik Coin"
                             />
                             {errors.name && (
                               <p className="mt-1 text-sm text-red-500">{errors.name}</p>
@@ -784,7 +784,7 @@ export default function CreateMusicCoin() {
                               value={formState.symbol}
                               onChange={handleChange}
                               className="uppercase sonic-input"
-                              placeholder="MUSIC"
+                              placeholder="JC MUSIK"
                               maxLength={11}
                             />
                             {errors.symbol && (
@@ -875,10 +875,10 @@ export default function CreateMusicCoin() {
                             <div className="flex items-start gap-3 p-4 mb-6 sonic-card">
                               <Info size={18} className="text-primary mt-0.5" />
                               <div>
-                                <p className="mb-1 text-sm font-medium">About Music Coins</p>
+                                <p className="mb-1 text-sm font-medium">About Musik Coins</p>
                                 <p className="text-sm text-muted-foreground">
-                                  Creating a coin will deploy a new ERC20 token contract with your music metadata. 
-                                  This lets fans trade your music coin and support your journey.
+                                  Creating a coin will deploy a new ERC20 token smart contract with your music metadata. 
+                                  This lets fans trade your musik coin and support your journey.
                                 </p>
                               </div>
                             </div>
@@ -908,7 +908,7 @@ export default function CreateMusicCoin() {
                               ) : (
                                 <>
                                   <Coins size={20} />
-                                  <span>Create Music Coin</span>
+                                  <span>Create Musik Coin</span>
                                 </>
                               )}
                             </button>

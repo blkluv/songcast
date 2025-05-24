@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Music, Twitter, Instagram, Github, Linkedin } from 'lucide-react';
+import { Music, Twitter, Instagram, } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -21,7 +21,7 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               <a 
-                href="https://twitter.com" 
+                href="https://twitter.com/jerseyclubtv" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="transition-colors text-muted-foreground hover:text-primary"
@@ -29,20 +29,12 @@ export default function Footer() {
                 <Twitter size={20} />
               </a>
               <a 
-                href="https://instagram.com" 
+                href="https://instagram.com/jerseyclubfm" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="transition-colors text-muted-foreground hover:text-primary"
               >
                 <Instagram size={20} />
-              </a>
-              <a 
-                href="https://github.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="transition-colors text-muted-foreground hover:text-primary"
-              >
-                <Github size={20} />
               </a>
             </div>
           </div>
