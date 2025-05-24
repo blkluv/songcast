@@ -11,10 +11,18 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { installIpfsGatewayProxy, cacheMetadata } from '../utils/ipfsGatewayProxy';
 
-// Music genres for the dropdown
+// Music genres for the dropdown - updated with Jersey Club genres
 const MUSIC_GENRES = [
-  "Rock", "Pop", "Hip Hop", "Electronic", "Jazz", "Classical", 
-  "R&B", "Country", "Folk", "Metal", "Ambient", "Indie", "Other"
+  "Jersey Club", "New Jersey Club", "Baltimore Club", "Philly Club",
+  "Jersey Club House", "Jersey Club Remix", "Jersey Club Edit",
+  "Jersey Club Mashup", "Jersey Club VIP", "Jersey Club Bounce",
+  "Jersey Club Flip", "Jersey Club Bootleg", "Jersey Club VIP Mix",
+  "Jersey Club Anthem", "Jersey Club Banger", "Jersey Club Bop",
+  "Jersey Club Slap", "Jersey Club Smash", "Jersey Club Smasher",
+  "Jersey Club Smashup", "Jersey Club Smash Hit", "Jersey Club Smash Mix",
+  "Jersey Club Smash Edit", "Jersey Club Smash Remix", "Jersey Club Smash Bootleg",
+  "Jersey Club Smash Flip", "Jersey Club Smash VIP", "Jersey Club Smash Anthem",
+  "Jersey Club Smash Banger", "Jersey Club Smash Bop", "Jersey Club Smash Slap"
 ];
 
 // ClientOnly wrapper to prevent hydration errors
@@ -935,4 +943,4 @@ export default function CreateMusicCoin() {
       )}
     </ClientOnly>
   );
-} 
+}
