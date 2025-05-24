@@ -247,9 +247,9 @@ export default function SharePage() {
     return (
       <>
         <FarcasterFrameEmbed coinAddress={address} />
-        <div className="container mx-auto px-4 py-8">
+        <div className="container px-4 py-8 mx-auto">
           <div className="flex justify-center items-center min-h-[50vh]">
-            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-woodcut-red"></div>
+            <div className="w-12 h-12 border-t-2 border-b-2 rounded-full animate-spin border-woodcut-red"></div>
           </div>
         </div>
       </>
@@ -260,10 +260,10 @@ export default function SharePage() {
     return (
       <>
         <FarcasterFrameEmbed coinAddress={address} />
-        <div className="container mx-auto px-4 py-8">
-          <div className="sonic-card p-6 text-center">
-            <h2 className="text-2xl font-black mb-4 uppercase">Error Loading Coin</h2>
-            <p className="text-white mb-4">{error || 'Coin not found'}</p>
+        <div className="container px-4 py-8 mx-auto">
+          <div className="p-6 text-center sonic-card">
+            <h2 className="mb-4 text-2xl font-black uppercase">Error Loading Coin</h2>
+            <p className="mb-4 text-white">{error || 'Coin not found'}</p>
           </div>
         </div>
       </>
@@ -295,10 +295,10 @@ export default function SharePage() {
         }}
       />
       
-      <div className="container mx-auto px-4 py-8">
+      <div className="container px-4 py-8 mx-auto">
         <div className="max-w-xl mx-auto">
-          <h1 className="text-3xl font-black mb-8 text-center uppercase tracking-tight">
-            <span className="gradient-text">SongCast</span> Music Coin
+          <h1 className="mb-8 text-3xl font-black tracking-tight text-center uppercase">
+            <span className="gradient-text">Jersey Club</span> Musik Coin
           </h1>
 
           <MusicCoinCard
@@ -314,14 +314,14 @@ export default function SharePage() {
           />
 
           <div className="mt-8 text-center">
-            <p className="text-white text-sm mb-4 uppercase font-bold">
-              SongCast is a platform for artists to create and trade their own music coins
+            <p className="mb-4 text-sm font-bold text-white uppercase">
+              Jersey Club is a platform for artists to create and trade their own musik coins
             </p>
             <a 
               href="/"
-              className="sonic-button-primary inline-flex"
+              className="inline-flex sonic-button-primary"
             >
-              Explore More Music Coins
+              Explore More Musik Coins
             </a>
           </div>
         </div>

@@ -1,6 +1,6 @@
 # API Setup Guide
 
-This document explains how to set up the required API keys and environment variables for the SongCast application.
+This document explains how to set up the required API keys and environment variables for the Jersey Club application.
 
 ## Required API Keys
 

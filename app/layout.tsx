@@ -7,8 +7,8 @@ import PageLayout from './components/layout/PageLayout';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'SongCast | Music Social Tokens',
-  description: 'Create, trade, and collect social tokens for music artists',
+  title: 'Jersey Club | Musik Social Tokens',
+  description: 'Create, trade, and collect social tokens for Jersey Club musik artists',
 };
 
 export default function RootLayout({

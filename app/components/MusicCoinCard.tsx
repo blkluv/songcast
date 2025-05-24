@@ -71,7 +71,7 @@ export default function MusicCoinCard({
       <FarcasterFrameEmbed
         coinAddress={coinAddress}
         buttonText="Trade Coin"
-        appName="SongCast"
+        appName="Jersey Club"
       />
     );
   };
@@ -102,13 +102,13 @@ export default function MusicCoinCard({
       {renderFarcasterEmbed()}
       
       {/* Right vertical red border */}
-      <div className="absolute top-0 right-0 bottom-0 w-2 bg-woodcut-red"></div>
+      <div className="absolute top-0 bottom-0 right-0 w-2 bg-woodcut-red"></div>
       
-      <div className="woodcut-card border-0 shadow-none">
+      <div className="border-0 shadow-none woodcut-card">
         <Link href={`/coins/${coinAddress}`} className="block">
-          <div className="aspect-square relative">
+          <div className="relative aspect-square">
             {/* Cover art container with fixed dimensions */}
-            <div className="relative h-full w-full">
+            <div className="relative w-full h-full">
               {coverArt ? (
                 <Image 
                   src={coverArt} 
@@ -120,14 +120,14 @@ export default function MusicCoinCard({
                   unoptimized={true}
                 />
               ) : (
-                <div className="w-full h-full bg-black flex items-center justify-center">
+                <div className="flex items-center justify-center w-full h-full bg-black">
                   <Coins size={64} className="text-white stroke-[3px]" />
                 </div>
               )}
             </div>
             
             {/* Header badge */}
-            <div className="absolute top-0 right-0 bg-white p-2 text-black font-bold uppercase tracking-wide z-20">
+            <div className="absolute top-0 right-0 z-20 p-2 font-bold tracking-wide text-black uppercase bg-white">
               <span>{symbol || ""}</span>
             </div>
           </div>
@@ -141,25 +141,25 @@ export default function MusicCoinCard({
         </div>
         
         {/* Wallet address strip */}
-        <div className="border-b-2 border-white bg-black flex items-center px-4 py-2">
-          <div className="w-6 h-6 flex items-center justify-center bg-black border border-white mr-2">
-            <span className="text-white text-xs">⬦</span>
+        <div className="flex items-center px-4 py-2 bg-black border-b-2 border-white">
+          <div className="flex items-center justify-center w-6 h-6 mr-2 bg-black border border-white">
+            <span className="text-xs text-white">⬦</span>
           </div>
-          <div className="text-xs font-mono text-white truncate">
+          <div className="font-mono text-xs text-white truncate">
             {coinAddress || ""}
           </div>
         </div>
         
         <div className="p-4 bg-black">
-          <p className="text-sm text-white mb-8 line-clamp-2">
+          <p className="mb-8 text-sm text-white line-clamp-2">
             {description || ""}
           </p>
           
-          <div className="flex items-center justify-between flex-wrap gap-3">
+          <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex gap-2">
               <button
                 onClick={toggleTrade}
-                className="bg-woodcut-red border-2 border-white text-white font-bold uppercase tracking-wide py-2 px-4 text-sm flex items-center gap-2"
+                className="flex items-center gap-2 px-4 py-2 text-sm font-bold tracking-wide text-white uppercase border-2 border-white bg-woodcut-red"
               >
                 <span>Trade Coin</span>
                 <ChevronDown size={16} className="stroke-[3px]" />
@@ -167,25 +167,25 @@ export default function MusicCoinCard({
               
               <button
                 onClick={copyShareUrl}
-                className="bg-black border-2 border-white text-white font-bold uppercase tracking-wide py-2 px-3 text-sm flex items-center gap-1"
+                className="flex items-center gap-1 px-3 py-2 text-sm font-bold tracking-wide text-white uppercase bg-black border-2 border-white"
                 title="Share to Farcaster"
               >
                 <Share2 size={16} className="stroke-[3px]" />
               </button>
               <button
                 onClick={() => router.push(`/artists/${artistAddress}`)}
-                className="bg-black border-2 border-white text-white font-bold uppercase tracking-wide py-2 px-3 text-sm flex items-center gap-1"
+                className="flex items-center gap-1 px-3 py-2 text-sm font-bold tracking-wide text-white uppercase bg-black border-2 border-white"
                 title="View Artist Profile"
               >
                 <User2 size={16} className="stroke-[3px]" />
               </button>
             </div>
             
-            <div className="flex items-center gap-3 flex-shrink-0">
+            <div className="flex items-center flex-shrink-0 gap-3">
               <Link
                 href={`/coins/${coinAddress}`}
                 aria-label="View details"
-                className="text-white hover:text-woodcut-orange transition-colors flex items-center text-sm gap-1 uppercase font-bold"
+                className="flex items-center gap-1 text-sm font-bold text-white uppercase transition-colors hover:text-woodcut-orange"
               >
                 Details
               </Link>
@@ -195,7 +195,7 @@ export default function MusicCoinCard({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="View on blockchain"
-                className="text-white hover:text-woodcut-orange transition-colors flex items-center text-sm gap-1 uppercase font-bold"
+                className="flex items-center gap-1 text-sm font-bold text-white uppercase transition-colors hover:text-woodcut-orange"
               >
                 <ExternalLink size={18} className="stroke-[3px] flex-shrink-0" />
               </a>
@@ -212,7 +212,7 @@ export default function MusicCoinCard({
               transition={{ duration: 0.3 }}
               className="px-5 pb-5 overflow-hidden bg-black"
             >
-              <div className="border-t-2 border-white pt-4">
+              <div className="pt-4 border-t-2 border-white">
                 <TradeMusicCoin
                   coinAddress={coinAddress}
                   coinName={name}

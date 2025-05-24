@@ -8,7 +8,7 @@ interface CoinLayoutProps {
 }
 
 // Get the base URL from environment or fallback to the vercel deployment URL
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://songcast.vercel.app";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://jerseyclub.io";
 
 export async function generateMetadata({ params }: CoinLayoutProps): Promise<Metadata> {
   const address = params.address;
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: CoinLayoutProps): Promise<Met
       title: "🎵 Listen & Trade",
       action: {
         type: "launch_frame",
-        name: "SongCast",
+        name: "Jersey Club",
         url: `${BASE_URL}/coins/${address}`,
         splashImageUrl: `${BASE_URL}/logo.png`,
         splashBackgroundColor: "#0c0116"
@@ -30,17 +30,17 @@ export async function generateMetadata({ params }: CoinLayoutProps): Promise<Met
   });
 
   return {
-    title: "Music Coin - SongCast",
-    description: "View and trade music social tokens on SongCast",
+    title: "Musik Coin - Jersey Club",
+    description: "View and trade musik social tokens on Jersey Club",
     openGraph: {
-      title: "Music Coin - SongCast",
-      description: "View and trade music social tokens on SongCast",
+      title: "Musik Coin - Jersey Club",
+      description: "View and trade musik social tokens on Jersey Club",
       images: [
         {
           url: `${BASE_URL}/coins/${address}/opengraph-image`,
           width: 1200,
           height: 630,
-          alt: "Music Coin Details",
+          alt: "Musik Coin Details",
         },
       ],
     },

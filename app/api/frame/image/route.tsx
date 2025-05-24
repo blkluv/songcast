@@ -9,23 +9,23 @@ const interBold = fetch(
 // Available frame images
 const FRAME_IMAGES = {
   welcome: {
-    title: 'Welcome to SongCast',
-    subtitle: 'Create, trade, and collect social tokens for music artists',
+    title: 'Welcome to Jersey Club',
+    subtitle: 'Create, trade, and collect social tokens for musik artists',
     emoji: '🎵',
   },
   'explore-coins': {
-    title: 'Explore Music Coins',
+    title: 'Explore Musi Coins',
     subtitle: 'Find and invest in your favorite artists',
     emoji: '🪙',
   },
   signin: {
-    title: 'Sign in to SongCast',
+    title: 'Sign in to Jersey Club',
     subtitle: 'Connect your Farcaster account to get started',
     emoji: '🔐',
   },
   'learn-more': {
-    title: 'About SongCast',
-    subtitle: 'A music platform powered by social tokens on Base',
+    title: 'About Jersey Club',
+    subtitle: 'A musik platform powered by social tokens on Base',
     emoji: 'ℹ️',
   },
 };
@@ -140,7 +140,7 @@ export async function GET(request: NextRequest) {
             color: 'rgba(255, 255, 255, 0.5)',
           }}
         >
-          SongCast • Music Social Tokens
+          Jersey Club • Musik Social Tokens
         </div>
       </div>
     ),

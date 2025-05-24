@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
     // Set pinning options
     const pinataOptions = {
       pinataMetadata: {
-        name: jsonData.name ? `SongCast - ${jsonData.name} Metadata` : 'SongCast Metadata',
+        name: jsonData.name ? `Jersey Club - ${jsonData.name} Metadata` : 'Jersey Club Metadata',
       },
       pinataOptions: {
         cidVersion: 0,

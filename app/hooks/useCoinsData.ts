@@ -31,7 +31,7 @@ export function useCoinsData() {
         coinAddress: address,
         name: "MASKED BASSLINE",
         symbol: "MASKBASS",
-        description: "FIRST SONGCAST. BASLINE SAMPLED FROM MASKED BALL BY JOCELYN POOK.",
+        description: "FIRST JERSEY CLUB. BASLINE SAMPLED FROM MASKED BALL BY JOCELYN POOK.",
         artistName: "SoundWave",
         artistAddress: address,
         coverArt: "/placeholder.png",

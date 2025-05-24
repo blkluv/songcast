@@ -382,7 +382,7 @@ export default function CreateMusicCoin() {
         name: formState.name,
         description: formState.description || `Music coin for ${artistAddress}`,
         image: `ipfs://${cleanImageCID}`,
-        external_url: `https://songcast.vercel.app/coins/${formState.name.replace(/\s+/g, '-').toLowerCase()}`,
+        external_url: `https://jerseyclub.io/coins/${formState.name.replace(/\s+/g, '-').toLowerCase()}`,
         animation_url: `ipfs://${cleanAudioCID}`,
         properties: {},
         attributes: [
@@ -469,18 +469,18 @@ export default function CreateMusicCoin() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="container mx-auto px-4 py-16"
+          className="container px-4 py-16 mx-auto"
         >
-          <div className="sonic-glass-card max-w-2xl mx-auto">
+          <div className="max-w-2xl mx-auto sonic-glass-card">
             <div className="p-8 text-center">
-              <div className="text-primary/70 text-5xl mb-6">
+              <div className="mb-6 text-5xl text-primary/70">
                 <Coins size={64} className="mx-auto" />
               </div>
-              <h2 className="text-2xl mb-4 font-bold">Wallet Connection Required</h2>
-              <p className="text-muted-foreground mb-6">
-                Please connect your wallet to create a music coin on SongCast.
+              <h2 className="mb-4 text-2xl font-bold">Wallet Connection Required</h2>
+              <p className="mb-6 text-muted-foreground">
+                Please connect your wallet to create a musik coin on Jersey Club.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col justify-center gap-4 sm:flex-row">
                 <button 
                   onClick={() => {
                     // Find the MetaMask connector and connect with it
@@ -502,14 +502,14 @@ export default function CreateMusicCoin() {
           </div>
         </motion.div>
       ) : (
-        <div className="container mx-auto px-4 py-8">
+        <div className="container px-4 py-8 mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
             <div className="mb-10 text-center">
-              <h1 className="gradient-text text-4xl mb-3 font-bold">Create Your Music Coin</h1>
+              <h1 className="mb-3 text-4xl font-bold gradient-text">Create Your Music Coin</h1>
               <p className="text-muted-foreground">
                 Create a social token for your music that fans can trade and support your journey
               </p>
@@ -520,21 +520,21 @@ export default function CreateMusicCoin() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
-                className="sonic-glass-card max-w-2xl mx-auto text-center"
+                className="max-w-2xl mx-auto text-center sonic-glass-card"
               >
                 <div className="p-8">
                   <div className="mb-6">
-                    <div className="w-16 h-16 mx-auto rounded-full bg-green-500/20 flex items-center justify-center mb-4">
+                    <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-green-500/20">
                       <CheckSquare size={32} className="text-green-500" />
                     </div>
-                    <h2 className="text-2xl font-bold mb-2 gradient-text">Coin Created Successfully!</h2>
-                    <p className="text-muted-foreground mb-4">
+                    <h2 className="mb-2 text-2xl font-bold gradient-text">Coin Created Successfully!</h2>
+                    <p className="mb-4 text-muted-foreground">
                       Your music coin "{formState.name}" has been created and is now available for trading.
                     </p>
                   </div>
                   
-                  <div className="sonic-card p-5 mb-6">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="p-5 mb-6 sonic-card">
+                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                       <div className="flex flex-col">
                         <span className="text-xs text-muted-foreground">Coin Name</span>
                         <span className="font-medium">{formState.name}</span>
@@ -554,14 +554,14 @@ export default function CreateMusicCoin() {
                     </div>
                     
                     {createdCoinAddress && (
-                      <div className="mt-4 pt-4 border-t border-white/10">
+                      <div className="pt-4 mt-4 border-t border-white/10">
                         <div className="flex flex-col">
-                          <span className="text-xs text-muted-foreground mb-1">Coin Address</span>
+                          <span className="mb-1 text-xs text-muted-foreground">Coin Address</span>
                           <a 
                             href={`https://basescan.org/address/${createdCoinAddress}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-primary text-sm break-all hover:underline font-mono"
+                            className="font-mono text-sm break-all text-primary hover:underline"
                           >
                             {createdCoinAddress}
                           </a>
@@ -570,7 +570,7 @@ export default function CreateMusicCoin() {
                     )}
                   </div>
                   
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <div className="flex flex-col justify-center gap-4 sm:flex-row">
                     <Link href="/coins" className="sonic-button-primary">
                       <Music size={20} />
                       <span>Go to Coins</span>
@@ -606,35 +606,35 @@ export default function CreateMusicCoin() {
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="max-w-4xl mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-5">
                   {/* Left column: File uploads and preview */}
                   <div className="md:col-span-2">
-                    <div className="sonic-glass-card mb-6">
+                    <div className="mb-6 sonic-glass-card">
                       <div className="p-5">
-                        <h3 className="text-lg font-medium mb-4 flex items-center gap-2">
+                        <h3 className="flex items-center gap-2 mb-4 text-lg font-medium">
                           <AudioLines size={20} className="text-primary" />
                           <span>Audio File</span>
                         </h3>
                         
                         {previewAudio ? (
                           <div className="mb-4">
-                            <div className="sonic-waveform relative mb-4">
+                            <div className="relative mb-4 sonic-waveform">
                               <div className="absolute inset-0 flex items-center justify-center">
                                 <button
                                   type="button"
                                   onClick={togglePlayPause}
-                                  className="w-12 h-12 rounded-full bg-primary flex items-center justify-center hover:bg-primary/90 transition-all duration-300"
+                                  className="flex items-center justify-center w-12 h-12 transition-all duration-300 rounded-full bg-primary hover:bg-primary/90"
                                 >
                                   {isPlaying ? (
                                     <Pause size={24} className="text-white" />
                                   ) : (
-                                    <Play size={24} className="text-white ml-1" />
+                                    <Play size={24} className="ml-1 text-white" />
                                   )}
                                 </button>
                               </div>
                             </div>
                             
-                            <div className="flex justify-between items-center text-sm text-muted-foreground">
+                            <div className="flex items-center justify-between text-sm text-muted-foreground">
                               <div className="flex items-center gap-1">
                                 <Clock size={14} />
                                 <span>{audioDuration}</span>
@@ -649,7 +649,7 @@ export default function CreateMusicCoin() {
                                     audioFileRef.current.value = '';
                                   }
                                 }}
-                                className="text-red-500 hover:text-red-600 flex items-center gap-1"
+                                className="flex items-center gap-1 text-red-500 hover:text-red-600"
                               >
                                 <Trash2 size={14} />
                                 <span>Remove</span>
@@ -660,14 +660,14 @@ export default function CreateMusicCoin() {
                           <div className="mb-4">
                             <div
                               onClick={triggerAudioInput}
-                              className="border-2 border-dashed border-white/10 rounded-xl p-8 text-center cursor-pointer hover:border-primary/30 hover:bg-primary/5 transition-colors duration-300"
+                              className="p-8 text-center transition-colors duration-300 border-2 border-dashed cursor-pointer border-white/10 rounded-xl hover:border-primary/30 hover:bg-primary/5"
                             >
                               <Music size={40} className="mx-auto mb-3 text-muted-foreground" />
-                              <p className="text-muted-foreground mb-1">Click to upload audio file</p>
+                              <p className="mb-1 text-muted-foreground">Click to upload audio file</p>
                               <p className="text-xs text-muted-foreground/70">MP3, WAV, FLAC (max 50MB)</p>
                             </div>
                             {errors.audio && (
-                              <p className="text-red-500 text-sm mt-2">{errors.audio}</p>
+                              <p className="mt-2 text-sm text-red-500">{errors.audio}</p>
                             )}
                           </div>
                         )}
@@ -684,20 +684,20 @@ export default function CreateMusicCoin() {
                     
                     <div className="sonic-glass-card">
                       <div className="p-5">
-                        <h3 className="text-lg font-medium mb-4 flex items-center gap-2">
+                        <h3 className="flex items-center gap-2 mb-4 text-lg font-medium">
                           <Disc size={20} className="text-primary" />
                           <span>Cover Art</span>
                         </h3>
                         
                         {previewImage ? (
-                          <div className="mb-4 relative">
-                            <div className="aspect-square rounded-xl overflow-hidden">
+                          <div className="relative mb-4">
+                            <div className="overflow-hidden aspect-square rounded-xl">
                               <Image
                                 src={previewImage}
                                 alt="Cover Preview"
                                 width={500}
                                 height={500}
-                                className="w-full h-full object-cover"
+                                className="object-cover w-full h-full"
                               />
                             </div>
                             <button
@@ -717,14 +717,14 @@ export default function CreateMusicCoin() {
                           <div className="mb-4">
                             <div
                               onClick={triggerImageInput}
-                              className="border-2 border-dashed border-white/10 rounded-xl p-8 text-center cursor-pointer hover:border-primary/30 hover:bg-primary/5 transition-colors duration-300 aspect-square flex flex-col items-center justify-center"
+                              className="flex flex-col items-center justify-center p-8 text-center transition-colors duration-300 border-2 border-dashed cursor-pointer border-white/10 rounded-xl hover:border-primary/30 hover:bg-primary/5 aspect-square"
                             >
                               <Upload size={40} className="mx-auto mb-3 text-muted-foreground" />
-                              <p className="text-muted-foreground mb-1">Click to upload cover art</p>
+                              <p className="mb-1 text-muted-foreground">Click to upload cover art</p>
                               <p className="text-xs text-muted-foreground/70">JPG, PNG, GIF (max 10MB)</p>
                             </div>
                             {errors.image && (
-                              <p className="text-red-500 text-sm mt-2">{errors.image}</p>
+                              <p className="mt-2 text-sm text-red-500">{errors.image}</p>
                             )}
                           </div>
                         )}
@@ -744,14 +744,14 @@ export default function CreateMusicCoin() {
                   <div className="md:col-span-3">
                     <div className="sonic-glass-card">
                       <div className="p-6">
-                        <h3 className="text-lg font-medium mb-6 flex items-center gap-2">
+                        <h3 className="flex items-center gap-2 mb-6 text-lg font-medium">
                           <Coins size={20} className="text-primary" />
                           <span>Coin Information</span>
                         </h3>
                         
                         <div className="space-y-6">
                           <div>
-                            <label className="block text-sm font-medium mb-1">Coin Name</label>
+                            <label className="block mb-1 text-sm font-medium">Coin Name</label>
                             <input
                               type="text"
                               name="name"
@@ -761,34 +761,34 @@ export default function CreateMusicCoin() {
                               placeholder="My Music Coin"
                             />
                             {errors.name && (
-                              <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                              <p className="mt-1 text-sm text-red-500">{errors.name}</p>
                             )}
-                            <p className="text-xs text-muted-foreground mt-1">
+                            <p className="mt-1 text-xs text-muted-foreground">
                               The name of your coin (e.g., "Artist Name Coin")
                             </p>
                           </div>
                           
                           <div>
-                            <label className="block text-sm font-medium mb-1">Coin Symbol</label>
+                            <label className="block mb-1 text-sm font-medium">Coin Symbol</label>
                             <input
                               type="text"
                               name="symbol"
                               value={formState.symbol}
                               onChange={handleChange}
-                              className="sonic-input uppercase"
+                              className="uppercase sonic-input"
                               placeholder="MUSIC"
                               maxLength={11}
                             />
                             {errors.symbol && (
-                              <p className="text-red-500 text-sm mt-1">{errors.symbol}</p>
+                              <p className="mt-1 text-sm text-red-500">{errors.symbol}</p>
                             )}
-                            <p className="text-xs text-muted-foreground mt-1">
+                            <p className="mt-1 text-xs text-muted-foreground">
                               Trading symbol for your coin (1-11 characters, e.g., "ARTIST")
                             </p>
                           </div>
                           
                           <div>
-                            <label className="block text-sm font-medium mb-1">Description</label>
+                            <label className="block mb-1 text-sm font-medium">Description</label>
                             <textarea
                               name="description"
                               value={formState.description}
@@ -797,15 +797,15 @@ export default function CreateMusicCoin() {
                               placeholder="Tell fans what your music coin represents..."
                             />
                             {errors.description && (
-                              <p className="text-red-500 text-sm mt-1">{errors.description}</p>
+                              <p className="mt-1 text-sm text-red-500">{errors.description}</p>
                             )}
                           </div>
                           
                           <div>
-                            <label className="block text-sm font-medium mb-1">Genre</label>
+                            <label className="block mb-1 text-sm font-medium">Genre</label>
                             <div className="relative" ref={genreDropdownRef}>
                               <div 
-                                className="sonic-input flex items-center justify-between cursor-pointer"
+                                className="flex items-center justify-between cursor-pointer sonic-input"
                                 onClick={() => setShowGenreDropdown(prev => !prev)}
                               >
                                 <span className={formState.genre ? "" : "text-muted-foreground/50"}>
@@ -815,7 +815,7 @@ export default function CreateMusicCoin() {
                               </div>
                               
                               {errors.genre && (
-                                <p className="text-red-500 text-sm mt-1">{errors.genre}</p>
+                                <p className="mt-1 text-sm text-red-500">{errors.genre}</p>
                               )}
                               
                               <AnimatePresence>
@@ -825,7 +825,7 @@ export default function CreateMusicCoin() {
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -10 }}
                                     transition={{ duration: 0.2 }}
-                                    className="absolute mt-1 w-full z-10 max-h-56 overflow-auto sonic-glass-card border border-white/10 rounded-xl"
+                                    className="absolute z-10 w-full mt-1 overflow-auto border max-h-56 sonic-glass-card border-white/10 rounded-xl"
                                   >
                                     <div className="p-1">
                                       {MUSIC_GENRES.map(genre => (
@@ -847,7 +847,7 @@ export default function CreateMusicCoin() {
                           </div>
                           
                           <div>
-                            <label className="block text-sm font-medium mb-1">Initial Purchase (ETH)</label>
+                            <label className="block mb-1 text-sm font-medium">Initial Purchase (ETH)</label>
                             <input
                               type="number"
                               name="initialPurchaseWei"
@@ -858,16 +858,16 @@ export default function CreateMusicCoin() {
                               min="0"
                               step="0.01"
                             />
-                            <p className="text-xs text-muted-foreground mt-1">
+                            <p className="mt-1 text-xs text-muted-foreground">
                               Initial amount of ETH to purchase for liquidity (recommended: 0.01 ETH)
                             </p>
                           </div>
                           
                           <div className="pt-2">
-                            <div className="sonic-card p-4 mb-6 flex items-start gap-3">
+                            <div className="flex items-start gap-3 p-4 mb-6 sonic-card">
                               <Info size={18} className="text-primary mt-0.5" />
                               <div>
-                                <p className="text-sm mb-1 font-medium">About Music Coins</p>
+                                <p className="mb-1 text-sm font-medium">About Music Coins</p>
                                 <p className="text-sm text-muted-foreground">
                                   Creating a coin will deploy a new ERC20 token contract with your music metadata. 
                                   This lets fans trade your music coin and support your journey.
@@ -877,12 +877,12 @@ export default function CreateMusicCoin() {
                             
                             <button
                               type="submit"
-                              className="sonic-button-primary w-full py-3"
+                              className="w-full py-3 sonic-button-primary"
                               disabled={isUploading || txPending}
                             >
                               {isUploading || txPending ? (
                                 <div className="flex items-center justify-center">
-                                  <div className="spinner-sm mr-3"></div>
+                                  <div className="mr-3 spinner-sm"></div>
                                   {isUploading ? (
                                     <div className="flex flex-col items-start">
                                       <span className="font-medium">
@@ -909,14 +909,14 @@ export default function CreateMusicCoin() {
                               <motion.div
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
-                                className="mt-4 p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-500 text-sm"
+                                className="p-4 mt-4 text-sm text-red-500 border bg-red-500/10 border-red-500/20 rounded-xl"
                               >
                                 <div className="flex items-start gap-2">
                                   <div className="text-red-500 mt-0.5">
                                     <FileText size={16} />
                                   </div>
                                   <div>
-                                    <p className="font-medium mb-1">Error creating coin</p>
+                                    <p className="mb-1 font-medium">Error creating coin</p>
                                     <p>{txError}</p>
                                   </div>
                                 </div>

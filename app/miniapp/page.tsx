@@ -3,10 +3,10 @@
 import React, { useEffect, useState } from 'react';
 import { sdk } from '@farcaster/frame-sdk';
 import { Button } from '../components/ui/button';
-import { Coins, Music, Share, Sparkles, User } from 'lucide-react';
+import { Coins, Musik, Share, Sparkles, User } from 'lucide-react';
 
 // Get the base URL from environment or use a fallback for local development
-const BASE_URL = 'https://songcast.vercel.app';
+const BASE_URL = 'https://jerseyclub.io';
 
 export default function FarcasterMiniApp() {
   const [isReady, setIsReady] = useState(false);
@@ -67,7 +67,7 @@ export default function FarcasterMiniApp() {
     try {
       // Open a URL to share content instead of using composeCast
       await sdk.actions.openUrl('https://warpcast.com/~/compose?text=' + 
-        encodeURIComponent(`Coin your music directly on Farcaster! 🎵 songcast.vercel.app`));
+        encodeURIComponent(`Coin your Jersey Club musik directly on Farcaster! 🎵 jerseyclub.io`));
     } catch (error) {
       console.error('Error sharing on Farcaster:', error);
     }
@@ -84,28 +84,28 @@ export default function FarcasterMiniApp() {
 
   const handleExploreCoins = () => {
     // Navigate to the coins page
-    window.location.href = `https://songcast.vercel.app/coins`;
+    window.location.href = `https://jerseyclub.io/coins`;
   };
 
   const handleDiscoverMusic = () => {
     // Navigate to the music discovery page
-    window.location.href = `https://songcast.vercel.app/artists`;
+    window.location.href = `https://jerseyclub.io/artists`;
   };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-gradient-to-b from-black to-purple-950">
-      <div className="sonic-glass-card p-8 rounded-2xl w-full max-w-md">
-      <div className="inline-flex items-center bg-black border-2 border-white shadow-woodcut px-4 py-2 mb-6">
+      <div className="w-full max-w-md p-8 sonic-glass-card rounded-2xl">
+      <div className="inline-flex items-center px-4 py-2 mb-6 bg-black border-2 border-white shadow-woodcut">
                 <Sparkles size={20} className="text-woodcut-red mr-2 stroke-[3px]" />
-                <span className="text-sm uppercase font-bold tracking-wide">Introducing Music Coins</span>
+                <span className="text-sm font-bold tracking-wide uppercase">Introducing Musik Coins</span>
               </div>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black uppercase mb-6 leading-tight tracking-tight text-shadow-md">
+              <h1 className="mb-6 text-5xl font-black leading-tight tracking-tight uppercase md:text-6xl lg:text-7xl text-shadow-md">
                 COIN YOUR
-                <span className="gradient-text block mt-2">MUSIC</span>
+                <span className="block mt-2 gradient-text">MUSIK</span>
               </h1>
               
-              <p className="text-xl mb-8 max-w-xl mx-auto lg:mx-0 uppercase font-bold">
-                Explore the SongCast miniapp
+              <p className="max-w-xl mx-auto mb-8 text-xl font-bold uppercase lg:mx-0">
+                Explore the Jersey Club miniapp
               </p>
       
         
@@ -113,7 +113,7 @@ export default function FarcasterMiniApp() {
   
           
           <Button 
-            className="sonic-button-outline py-3 px-6"
+            className="px-6 py-3 sonic-button-outline"
             onClick={handleShareOnFarcaster}
           >
             <Share size={20} className="mr-2 text-white" />

@@ -10,7 +10,7 @@ type FrameResponse = {
   postUrl?: string;
 };
 
-const BASE_URL = "https://songcast.vercel.app";
+const BASE_URL = "https://jerseyclub.io";
 
 export async function POST(req: NextRequest): Promise<NextResponse> {
   try {

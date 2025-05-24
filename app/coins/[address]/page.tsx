@@ -244,10 +244,10 @@ export default function CoinDetail() {
       // Check if in a Farcaster mini app environment
       if (typeof sdk !== 'undefined' && sdk.actions && sdk.actions.openUrl) {
         // Get the base URL from environment or default to the vercel deployment
-        const baseUrl = 'https://songcast.vercel.app';
+        const baseUrl = 'https://jerseyclub.io';
         
         // Create share text
-        const shareText = `Check out ${coin.name} (${coin.symbol}) by ${coin.artistName} on SongCast! 🎵 ${baseUrl}/coins/${address}`;
+        const shareText = `Check out ${coin.name} (${coin.symbol}) by ${coin.artistName} on Jersey Club! 🎵 ${baseUrl}/coins/${address}`;
         
         // Open in Warpcast compose
         await sdk.actions.openUrl('https://warpcast.com/~/compose?text=' + 
@@ -258,7 +258,7 @@ export default function CoinDetail() {
           try {
             await navigator.share({
               title: `${coin.name} (${coin.symbol}) by ${coin.artistName}`,
-              text: `Check out ${coin.name} by ${coin.artistName} on SongCast!`,
+              text: `Check out ${coin.name} by ${coin.artistName} on Jersey Club!`,
               url: window.location.href
             });
           } catch (e) {
@@ -362,10 +362,10 @@ export default function CoinDetail() {
   // Loading state
   if (loading) {
     return (
-      <div className="container mx-auto px-4 py-16 min-h-screen flex flex-col justify-center items-center">
-        <div className="sonic-glass-card p-8 rounded-2xl w-full max-w-md text-center">
-          <Coins className="text-primary h-16 w-16 mx-auto mb-6 animate-pulse" />
-          <h2 className="text-2xl font-bold mb-4">Loading Coin Details</h2>
+      <div className="container flex flex-col items-center justify-center min-h-screen px-4 py-16 mx-auto">
+        <div className="w-full max-w-md p-8 text-center sonic-glass-card rounded-2xl">
+          <Coins className="w-16 h-16 mx-auto mb-6 text-primary animate-pulse" />
+          <h2 className="mb-4 text-2xl font-bold">Loading Coin Details</h2>
           <p className="text-muted-foreground">Please wait while we fetch the coin information...</p>
         </div>
       </div>
@@ -375,19 +375,19 @@ export default function CoinDetail() {
   // Error state
   if (error && !coin) {
     return (
-      <div className="container mx-auto px-4 py-16 min-h-screen flex flex-col justify-center items-center">
-        <div className="sonic-glass-card p-8 rounded-2xl w-full max-w-md text-center">
-          <Coins className="text-red-500 h-16 w-16 mx-auto mb-6" />
-          <h2 className="text-2xl font-bold mb-4">Coin Not Found</h2>
-          <p className="text-muted-foreground mb-6">{error}</p>
+      <div className="container flex flex-col items-center justify-center min-h-screen px-4 py-16 mx-auto">
+        <div className="w-full max-w-md p-8 text-center sonic-glass-card rounded-2xl">
+          <Coins className="w-16 h-16 mx-auto mb-6 text-red-500" />
+          <h2 className="mb-4 text-2xl font-bold">Coin Not Found</h2>
+          <p className="mb-6 text-muted-foreground">{error}</p>
           <div className="flex flex-col gap-4">
             <button 
               onClick={refreshCoin} 
-              className="sonic-button-primary py-2 px-4"
+              className="px-4 py-2 sonic-button-primary"
             >
               Try Again
             </button>
-            <Link href="/coins" className="sonic-button-outline py-2 px-4">
+            <Link href="/coins" className="px-4 py-2 sonic-button-outline">
               <ArrowLeft size={16} className="mr-2" />
               Back to All Coins
             </Link>
@@ -404,27 +404,27 @@ export default function CoinDetail() {
 
   return (
     <main className="min-h-screen py-12">
-      <div className="container mx-auto px-4">
+      <div className="container px-4 mx-auto">
         {/* Back button */}
         <Link 
           href="/coins" 
-          className="inline-flex items-center gap-2 mb-8 text-muted-foreground hover:text-white transition-colors"
+          className="inline-flex items-center gap-2 mb-8 transition-colors text-muted-foreground hover:text-white"
         >
           <ArrowLeft size={18} />
           <span>Back to All Coins</span>
         </Link>
         
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-3">
           {/* Left Column - Cover Art and Audio Player */}
           <div className="lg:col-span-1">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="sonic-glass-card p-4 rounded-2xl overflow-hidden"
+              className="p-4 overflow-hidden sonic-glass-card rounded-2xl"
             >
               {/* Cover Art */}
-              <div className="relative aspect-square rounded-xl overflow-hidden mb-6">
+              <div className="relative mb-6 overflow-hidden aspect-square rounded-xl">
                 {coin.coverArt ? (
                   <Image 
                     src={coin.coverArt} 
@@ -436,7 +436,7 @@ export default function CoinDetail() {
                     unoptimized={true}
                   />
                 ) : (
-                  <div className="w-full h-full bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center">
+                  <div className="flex items-center justify-center w-full h-full bg-gradient-to-br from-primary/30 to-primary/10">
                     <Coins size={64} className="text-primary/50" />
                   </div>
                 )}
@@ -459,11 +459,11 @@ export default function CoinDetail() {
                   </div>
                   
                   {/* Audio waveform visualization - static for now */}
-                  <div className="h-16 flex items-center justify-center gap-1 mb-4">
+                  <div className="flex items-center justify-center h-16 gap-1 mb-4">
                     {Array.from({ length: 30 }).map((_, i) => (
                       <div 
                         key={i}
-                        className="w-1 h-6 bg-primary/30 rounded-full"
+                        className="w-1 h-6 rounded-full bg-primary/30"
                         style={{
                           height: `${Math.sin(i / 3) * 16 + 12}px`,
                           opacity: 0.3 + Math.sin(i / 5) * 0.7
@@ -473,14 +473,14 @@ export default function CoinDetail() {
                   </div>
                   
                   {error && (
-                    <div className="text-xs text-red-400 text-center mb-4">
+                    <div className="mb-4 text-xs text-center text-red-400">
                       {error}
                     </div>
                   )}
                   
-                  <div className="text-center text-sm text-muted-foreground mb-2">
+                  <div className="mb-2 text-sm text-center text-muted-foreground">
                     <AudioLines size={16} className="inline-block mr-2" />
-                    <span>Listen to this music coin</span>
+                    <span>Listen to this musik coin</span>
                   </div>
                 </div>
               )}
@@ -495,29 +495,29 @@ export default function CoinDetail() {
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               {/* Coin Details */}
-              <div className="sonic-glass-card p-8 rounded-2xl mb-8">
+              <div className="p-8 mb-8 sonic-glass-card rounded-2xl">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/20">
                     <Coins size={24} className="text-primary" />
                   </div>
                   <div>
                     <h1 className="text-xl font-bold gradient-text">
                       {coin.name}
                     </h1>
-                    <div className="text-muted-foreground flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-muted-foreground">
                       <User size={14} />
                       <ShortAddressLink address={coin.artistAddress} />
                     </div>
                   </div>
                 </div>
                 
-                <p className="text-lg text-muted-foreground mb-8">
+                <p className="mb-8 text-lg text-muted-foreground">
                   {coin.description}
                 </p>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                  <div className="sonic-card p-4">
-                    <div className="text-sm text-muted-foreground mb-1">Token Address</div>
+                <div className="grid grid-cols-1 gap-6 mb-8 md:grid-cols-2">
+                  <div className="p-4 sonic-card">
+                    <div className="mb-1 text-sm text-muted-foreground">Token Address</div>
                     <div className="flex items-center justify-between">
                       <div className="font-mono text-xs truncate max-w-[200px]">
                         {coin.coinAddress}
@@ -526,15 +526,15 @@ export default function CoinDetail() {
                         href={`https://basescan.org/token/${coin.coinAddress}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-primary hover:text-primary/80 transition-colors"
+                        className="transition-colors text-primary hover:text-primary/80"
                       >
                         <ExternalLink size={16} />
                       </a>
                     </div>
                   </div>
                   
-                  <div className="sonic-card p-4">
-                    <div className="text-sm text-muted-foreground mb-1">Artist Address</div>
+                  <div className="p-4 sonic-card">
+                    <div className="mb-1 text-sm text-muted-foreground">Artist Address</div>
                     <div className="flex items-center justify-between">
                       <div className="font-mono text-xs truncate max-w-[200px]">
                         {coin.artistAddress}
@@ -543,7 +543,7 @@ export default function CoinDetail() {
                         href={`https://basescan.org/address/${coin.artistAddress}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-primary hover:text-primary/80 transition-colors"
+                        className="transition-colors text-primary hover:text-primary/80"
                       >
                         <ExternalLink size={16} />
                       </a>
@@ -554,7 +554,7 @@ export default function CoinDetail() {
                 <div className="flex gap-4">
                   <button 
                     onClick={shareCoinOnFarcaster}
-                    className="sonic-button-outline py-2 px-4"
+                    className="px-4 py-2 sonic-button-outline"
                   >
                     <Share size={16} className="mr-2" />
                     <span>Share</span>
@@ -563,9 +563,9 @@ export default function CoinDetail() {
               </div>
               
               {/* Trading Section */}
-              <div className="sonic-glass-card p-8 rounded-2xl">
-                <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+              <div className="p-8 sonic-glass-card rounded-2xl">
+                <h2 className="flex items-center gap-3 mb-6 text-2xl font-bold">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/20">
                     <Coins size={20} className="text-primary" />
                   </div>
                   <span>Trade Coin</span>

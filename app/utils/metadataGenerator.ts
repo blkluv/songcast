@@ -1,5 +1,5 @@
 /**
- * Generates standard metadata for a music track to be stored on IPFS
+ * Generates standard metadata for a musi track to be stored on IPFS
  * and referenced by the NFT contract
  */
 export function generateTrackMetadata(data: {
@@ -37,7 +37,7 @@ export function generateTrackMetadata(data: {
   return {
     name: title,
     description: description || `Track by ${artist}`,
-    external_url: `https://songcast.vercel.app/coins/${title}`,
+    external_url: `https://jerseyclub.io/coins/${title}`,
     image: imageUrl,
     animation_url: audioUrl,
     artist: artist,

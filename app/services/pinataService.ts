@@ -213,7 +213,7 @@ export async function uploadJSONToIPFS(metadata: any): Promise<string> {
       // Additional pinning options to ensure persistence
       const pinataOptions = {
         pinataMetadata: {
-          name: `SongCast - ${metadata.name} Metadata`,
+          name: `Jersey Club - ${metadata.name} Metadata`,
         },
         pinataOptions: {
           cidVersion: 0,
@@ -290,7 +290,7 @@ export async function uploadJSONToIPFS(metadata: any): Promise<string> {
       // Additional pinning options to ensure persistence
       const pinataOptions = {
         pinataMetadata: {
-          name: `SongCast - ${metadata.name} Metadata`,
+          name: `Jersey Club - ${metadata.name} Metadata`,
         },
         pinataOptions: {
           cidVersion: 0,

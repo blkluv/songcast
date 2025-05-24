@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
 
 // Get the base URL from environment or fallback to the vercel deployment URL
-const BASE_URL = "https://songcast.vercel.app";
+const BASE_URL = "https://jerseyclub.io";
 
 // Define all the necessary metadata for the Farcaster Mini App
 export const metadata: Metadata = {
-  title: "SongCast | Music Social Tokens",
-  description: "Create, trade, and collect social tokens for music artists",
+  title: "Jersey Club | Musik Social Tokens",
+  description: "Create, trade, and collect social tokens for Jersey Club musik artists",
   openGraph: {
-    title: "SongCast | Music Social Tokens",
-    description: "Create, trade, and collect social tokens for music artists",
+    title: "Jersey Club | Musik Social Tokens",
+    description: "Create, trade, and collect social tokens for musik artists",
     images: [
       {
         url: `${BASE_URL}/image.png`,
         width: 1200,
         height: 630,
-        alt: "SongCast Social Music Tokens",
+        alt: "Jersey Club Social Musik Tokens",
       },
     ],
   },
@@ -25,10 +25,10 @@ export const metadata: Metadata = {
       version: "next",
       imageUrl: `${BASE_URL}/image.png`,
       button: {
-        title: "Explore Music Coins",
+        title: "Explore Musik Coins",
         action: {
           type: "launch_frame",
-          name: "SongCast",
+          name: "Jersey Club",
           url: `${BASE_URL}/miniapp`,
           splashImageUrl: `${BASE_URL}/logo.png`,
           splashBackgroundColor: "#0c0116"

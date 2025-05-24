@@ -248,7 +248,7 @@ export default async function Image({ params }: { params: { address: string } })
             color: 'rgba(255, 255, 255, 0.5)',
           }}
         >
-          songcast.vercel.app/coins/{address}
+          jerseyclub.io/coins/{address}
         </div>
       </div>
     ),

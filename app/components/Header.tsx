@@ -71,40 +71,40 @@ export default function Header() {
           : 'bg-black py-5'
       }`}
     >
-      <div className="container mx-auto px-4">
+      <div className="container px-4 mx-auto">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-12 h-12 bg-woodcut-red border-2 border-white flex items-center justify-center">
+            <div className="flex items-center justify-center w-12 h-12 border-2 border-white bg-woodcut-red">
               <Music className="w-7 h-7 text-white stroke-[3px]" />
             </div>
-            <span className="text-2xl font-black uppercase tracking-tight text-white">SONGCAST</span>
+            <span className="text-2xl font-black tracking-tight text-white uppercase">JERSEY CLUB</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="items-center hidden gap-8 md:flex">
             <Link 
               href="/marketplace"
-              className="text-white uppercase font-bold tracking-wide hover:text-woodcut-red transition-colors"
+              className="font-bold tracking-wide text-white uppercase transition-colors hover:text-woodcut-red"
             >
               Marketplace
             </Link>
             <Link 
               href="/artists"
-              className="text-white uppercase font-bold tracking-wide hover:text-woodcut-red transition-colors"
+              className="font-bold tracking-wide text-white uppercase transition-colors hover:text-woodcut-red"
             >
               Artists
             </Link>
             <Link 
               href="/marketplace/publish"
-              className="text-white uppercase font-bold tracking-wide hover:text-woodcut-red transition-colors"
+              className="font-bold tracking-wide text-white uppercase transition-colors hover:text-woodcut-red"
             >
               Publish
             </Link>
           </nav>
 
           {/* Desktop Buttons */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="items-center hidden gap-4 md:flex">
             <ClientOnly>
               <div className="wallet-container">
                 <Wallet className="wallet-container">
@@ -112,8 +112,8 @@ export default function Header() {
                     <Name address={address}/>
                   </ConnectWallet>
                   <WalletDropdown>
-                    <div className="bg-black border-2 border-white shadow-woodcut p-4">
-                      <div className="mb-2 text-lg font-bold text-white uppercase border-b-2 border-white pb-2">
+                    <div className="p-4 bg-black border-2 border-white shadow-woodcut">
+                      <div className="pb-2 mb-2 text-lg font-bold text-white uppercase border-b-2 border-white">
                         <span>Wallet Details</span>
                       </div>
                       <div>
@@ -128,11 +128,11 @@ export default function Header() {
                           href="https://keys.coinbase.com"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-full mt-2 text-center bg-woodcut-red border border-white text-white py-2 px-4 uppercase font-bold transition-colors shadow-woodcut"
+                          className="w-full px-4 py-2 mt-2 font-bold text-center text-white uppercase transition-colors border border-white bg-woodcut-red shadow-woodcut"
                         >
                           Wallet
                         </WalletDropdownLink>
-                        <WalletDropdownDisconnect className="w-full mt-2 text-center bg-black border-2 border-white text-white py-2 px-4 uppercase font-bold transition-colors shadow-woodcut hover:bg-woodcut-red" />
+                        <WalletDropdownDisconnect className="w-full px-4 py-2 mt-2 font-bold text-center text-white uppercase transition-colors bg-black border-2 border-white shadow-woodcut hover:bg-woodcut-red" />
                       </div>
                     </div>
                   </WalletDropdown>
@@ -143,7 +143,7 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white"
+            className="text-white md:hidden"
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
@@ -157,12 +157,12 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden fixed inset-0 bg-black z-40 pt-20 border-2 border-white shadow-woodcut-lg">
-          <div className="container mx-auto px-4">
+        <div className="fixed inset-0 z-40 pt-20 bg-black border-2 border-white md:hidden shadow-woodcut-lg">
+          <div className="container px-4 mx-auto">
             <nav className="flex flex-col gap-6 py-8">
               <Link
                 href="/"
-                className="flex items-center gap-3 py-2 text-xl text-white font-bold uppercase"
+                className="flex items-center gap-3 py-2 text-xl font-bold text-white uppercase"
                 onClick={closeMenu}
               >
                 <Music size={28} className="text-woodcut-red stroke-[3px]" />
@@ -171,7 +171,7 @@ export default function Header() {
 
               <Link
                 href="/marketplace"
-                className="flex items-center gap-3 py-2 text-xl text-white font-bold uppercase"
+                className="flex items-center gap-3 py-2 text-xl font-bold text-white uppercase"
                 onClick={closeMenu}
               >
                 <Disc size={28} className="text-woodcut-red stroke-[3px]" />
@@ -180,7 +180,7 @@ export default function Header() {
 
               <Link
                 href="/artists"
-                className="flex items-center gap-3 py-2 text-xl text-white font-bold uppercase"
+                className="flex items-center gap-3 py-2 text-xl font-bold text-white uppercase"
                 onClick={closeMenu}
               >
                 <User size={28} className="text-woodcut-red stroke-[3px]" />
@@ -189,18 +189,18 @@ export default function Header() {
 
               <Link
                 href="/marketplace/publish"
-                className="flex items-center gap-3 py-2 text-xl text-white font-bold uppercase"
+                className="flex items-center gap-3 py-2 text-xl font-bold text-white uppercase"
                 onClick={closeMenu}
               >
                 <Headphones size={28} className="text-woodcut-red stroke-[3px]" />
                 <span>Publish Music</span>
               </Link>
 
-              <div className="mt-4 pt-4 border-t-2 border-white">
+              <div className="pt-4 mt-4 border-t-2 border-white">
                 <ClientOnly>
                   <div className="wallet-container">
                     <Wallet className="wallet-container">
-                      <ConnectWallet className="w-full bg-woodcut-red border-2 border-white px-5 py-3 text-white font-bold uppercase tracking-wide shadow-woodcut transition-colors duration-300 flex items-center justify-center gap-2">
+                      <ConnectWallet className="flex items-center justify-center w-full gap-2 px-5 py-3 font-bold tracking-wide text-white uppercase transition-colors duration-300 border-2 border-white bg-woodcut-red shadow-woodcut">
                         <Name address={address}/>
                       </ConnectWallet>
                     </Wallet>

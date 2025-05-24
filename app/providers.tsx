@@ -20,7 +20,7 @@ const config = createConfig({
   connectors: [
     miniAppConnector(),
     coinbaseWallet({
-      appName: 'SongCast',
+      appName: 'ATL5D',
     }),
     injected(),
   ],

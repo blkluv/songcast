@@ -161,7 +161,7 @@ export async function GET(
                   display: 'inline-block',
                 }}
               >
-                TRADE COIN ON SONGCAST
+                TRADE COIN ON JERSEY CLUB
               </div>
             </div>
           </div>

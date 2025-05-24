@@ -15,7 +15,7 @@ interface FarcasterFrameEmbedProps {
 export default function FarcasterFrameEmbed({
   coinAddress,
   buttonText = "Trade Coin",
-  appName = "SongCast"
+  appName = "Jersey Club"
 }: FarcasterFrameEmbedProps) {
   
   // Generate the base URL for the application
@@ -24,7 +24,7 @@ export default function FarcasterFrameEmbed({
       return window.location.origin;
     }
     // Fallback for SSR
-    return process.env.NEXT_PUBLIC_BASE_URL || 'https://songcast.app';
+    return process.env.NEXT_PUBLIC_BASE_URL || 'https://jerseyclub.io';
   };
   
   const baseUrl = getBaseUrl();

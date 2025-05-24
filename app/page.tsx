@@ -238,41 +238,41 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 relative overflow-hidden">
+      <section className="relative py-20 overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 z-0 diagonal-pattern"></div>
       
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
+        <div className="container relative z-10 px-4 mx-auto">
+          <div className="flex flex-col items-center gap-10 lg:flex-row lg:gap-20">
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-              className="lg:w-1/2 text-center lg:text-left"
+              className="text-center lg:w-1/2 lg:text-left"
             >
-              <div className="inline-flex items-center bg-black border-2 border-white shadow-woodcut px-4 py-2 mb-6">
+              <div className="inline-flex items-center px-4 py-2 mb-6 bg-black border-2 border-white shadow-woodcut">
                 <Sparkles size={20} className="text-woodcut-red mr-2 stroke-[3px]" />
-                <span className="text-sm uppercase font-bold tracking-wide">Introducing Music Coins</span>
+                <span className="text-sm font-bold tracking-wide uppercase">Introducing Musik Coins</span>
               </div>
               
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black uppercase mb-6 leading-tight tracking-tight text-shadow-md">
+              <h1 className="mb-6 text-5xl font-black leading-tight tracking-tight uppercase md:text-6xl lg:text-7xl text-shadow-md">
                 Social Tokens for 
-                <span className="gradient-text block mt-2">Music Artists</span>
+                <span className="block mt-2 gradient-text">Musik Artists</span>
               </h1>
               
-              <p className="text-xl mb-8 max-w-xl mx-auto lg:mx-0 uppercase font-bold">
-                SongCast lets artists create their own coins, build communities,
-                and let fans invest directly in their musical journey.
+              <p className="max-w-xl mx-auto mb-8 text-xl font-bold uppercase lg:mx-0">
+                Jersey Club lets artists create their own coins, build communities,
+                and let fans invest directly in their musikal journey.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Link href="/coins" className="sonic-button-primary py-3 px-6">
+              <div className="flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
+                <Link href="/coins" className="px-6 py-3 sonic-button-primary">
                   <Coins size={24} className="stroke-[3px]" />
                   <span>Explore Coins</span>
                 </Link>
               </div>
               
-              <div className="mt-10 flex items-center justify-center lg:justify-start gap-2 text-sm uppercase font-bold">
+              <div className="flex items-center justify-center gap-2 mt-10 text-sm font-bold uppercase lg:justify-start">
                 <Globe size={20} className="stroke-[3px]" />
                 <span>Powered by Zora Protocol on Base</span>
               </div>
@@ -282,12 +282,12 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.23, 1, 0.32, 1] }}
-              className="lg:w-1/2 flex justify-center"
+              className="flex justify-center lg:w-1/2"
             >
               <div className="relative">
                 {/* Main Logo */}
-                <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-black border-4 border-white shadow-woodcut-xl flex items-center justify-center">
-                  <span className="text-white font-black text-6xl md:text-7xl lg:text-8xl uppercase tracking-tight">SC</span>
+                <div className="flex items-center justify-center w-64 h-64 bg-black border-4 border-white md:w-80 md:h-80 lg:w-96 lg:h-96 shadow-woodcut-xl">
+                  <span className="text-6xl font-black tracking-tight text-white uppercase md:text-7xl lg:text-8xl">SC</span>
                 </div>
                 
                 {/* Orbiting Coins */}
@@ -320,7 +320,7 @@ export default function Home() {
                         }}
                       >
                         <div 
-                          className="flex items-center justify-center bg-woodcut-red border-2 border-white shadow-woodcut text-white"
+                          className="flex items-center justify-center text-white border-2 border-white bg-woodcut-red shadow-woodcut"
                           style={{ width: `${size}px`, height: `${size}px` }}
                         >
                           <Coins size={size * 0.4} className="stroke-[3px]" />
@@ -338,45 +338,45 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: [0.23, 1, 0.32, 1] }}
-            className="mt-20 woodcut-card p-6 grid grid-cols-1 md:grid-cols-1 gap-4"
+            className="grid grid-cols-1 gap-4 p-6 mt-20 woodcut-card md:grid-cols-1"
           >
-            <div className="text-center p-3">
-              <div className="text-2xl md:text-3xl font-black mb-1 gradient-text">{allCoins.length || '0'}</div>
-              <div className="uppercase font-bold tracking-wide text-sm">Music Coins Created</div>
+            <div className="p-3 text-center">
+              <div className="mb-1 text-2xl font-black md:text-3xl gradient-text">{allCoins.length || '0'}</div>
+              <div className="text-sm font-bold tracking-wide uppercase">Musik Coins Created</div>
             </div>
           </motion.div>
         </div>
       </section>
       
       {/* How It Works Section */}
-      <section className="py-20 relative woodcut-paper">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="gradient-text text-4xl font-black mb-4 uppercase tracking-tight">How SongCast Works</h2>
-            <p className="text-xl max-w-2xl mx-auto uppercase font-bold">
-              SongCast creates a new way for artists to engage with fans through tradable social tokens.
+      <section className="relative py-20 woodcut-paper">
+        <div className="container px-4 mx-auto">
+          <div className="mb-16 text-center">
+            <h2 className="mb-4 text-4xl font-black tracking-tight uppercase gradient-text">How Jersey Club Works</h2>
+            <p className="max-w-2xl mx-auto text-xl font-bold uppercase">
+              Jersey Club creates a new way for artists to engage with fans through tradable social tokens.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {/* Step 1 */}
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="woodcut-card p-6 relative overflow-hidden group"
+              className="relative p-6 overflow-hidden woodcut-card group"
             >
               <div className="relative z-10">
                 <div className="w-16 h-16 flex items-center justify-center bg-woodcut-red border-2 border-white mb-4 group-hover:translate-y-[-5px] transition-transform duration-300">
                   <Coins size={32} className="text-white stroke-[3px]" />
                 </div>
-                <div className="bg-woodcut-red text-sm text-white font-bold uppercase tracking-wide inline-block px-3 py-1 mb-2 border border-white">Step 1</div>
-                <h3 className="text-xl font-black mb-3 uppercase tracking-tight">Create Coin</h3>
-                <p className="mb-4 uppercase font-bold">
+                <div className="inline-block px-3 py-1 mb-2 text-sm font-bold tracking-wide text-white uppercase border border-white bg-woodcut-red">Step 1</div>
+                <h3 className="mb-3 text-xl font-black tracking-tight uppercase">Create Coin</h3>
+                <p className="mb-4 font-bold uppercase">
                   Artists can create their own ERC20 token with custom name, symbol, and metadata.
                 </p>
-                <Link href="/coins" className="text-woodcut-red flex items-center text-sm font-bold uppercase tracking-wide group-hover:underline">
+                <Link href="/coins" className="flex items-center text-sm font-bold tracking-wide uppercase text-woodcut-red group-hover:underline">
                   <span>Create a coin</span>
                   <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform stroke-[3px]" />
                 </Link>
@@ -389,18 +389,18 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="woodcut-card p-6 relative overflow-hidden group"
+              className="relative p-6 overflow-hidden woodcut-card group"
             >
               <div className="relative z-10">
                 <div className="w-16 h-16 flex items-center justify-center bg-woodcut-red border-2 border-white mb-4 group-hover:translate-y-[-5px] transition-transform duration-300">
                   <Music size={32} className="text-white stroke-[3px]" />
                 </div>
-                <div className="bg-woodcut-red text-sm text-white font-bold uppercase tracking-wide inline-block px-3 py-1 mb-2 border border-white">Step 2</div>
-                <h3 className="text-xl font-black mb-3 uppercase tracking-tight">Enrich Profile</h3>
-                <p className="mb-4 uppercase font-bold">
-                  Upload music, images, and set benefits for token holders to grow your community.
+                <div className="inline-block px-3 py-1 mb-2 text-sm font-bold tracking-wide text-white uppercase border border-white bg-woodcut-red">Step 2</div>
+                <h3 className="mb-3 text-xl font-black tracking-tight uppercase">Enrich Profile</h3>
+                <p className="mb-4 font-bold uppercase">
+                  Upload musik, images, and set benefits for token holders to grow your community.
                 </p>
-                <Link href="/artists" className="text-woodcut-red flex items-center text-sm font-bold uppercase tracking-wide group-hover:underline">
+                <Link href="/artists" className="flex items-center text-sm font-bold tracking-wide uppercase text-woodcut-red group-hover:underline">
                   <span>View artists</span>
                   <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform stroke-[3px]" />
                 </Link>
@@ -413,18 +413,18 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="woodcut-card p-6 relative overflow-hidden group"
+              className="relative p-6 overflow-hidden woodcut-card group"
             >
               <div className="relative z-10">
                 <div className="w-16 h-16 flex items-center justify-center bg-woodcut-red border-2 border-white mb-4 group-hover:translate-y-[-5px] transition-transform duration-300">
                   <TrendingUp size={32} className="text-white stroke-[3px]" />
                 </div>
-                <div className="bg-woodcut-red text-sm text-white font-bold uppercase tracking-wide inline-block px-3 py-1 mb-2 border border-white">Step 3</div>
-                <h3 className="text-xl font-black mb-3 uppercase tracking-tight">Trade & Earn</h3>
-                <p className="mb-4 uppercase font-bold">
+                <div className="inline-block px-3 py-1 mb-2 text-sm font-bold tracking-wide text-white uppercase border border-white bg-woodcut-red">Step 3</div>
+                <h3 className="mb-3 text-xl font-black tracking-tight uppercase">Trade & Earn</h3>
+                <p className="mb-4 font-bold uppercase">
                   Fans can trade tokens on the open market, with artists earning royalties on trades.
                 </p>
-                <Link href="/coins" className="text-woodcut-red flex items-center text-sm font-bold uppercase tracking-wide group-hover:underline">
+                <Link href="/coins" className="flex items-center text-sm font-bold tracking-wide uppercase text-woodcut-red group-hover:underline">
                   <span>Explore market</span>
                   <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform stroke-[3px]" />
                 </Link>
@@ -439,25 +439,25 @@ export default function Home() {
       
       {/* CTA Section */}
       <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="sonic-glass-card p-8 md:p-12 rounded-3xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-            <div className="absolute bottom-0 left-0 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+        <div className="container px-4 mx-auto">
+          <div className="relative p-8 overflow-hidden sonic-glass-card md:p-12 rounded-3xl">
+            <div className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 rounded-full w-96 h-96 bg-primary/10 blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2 rounded-full w-80 h-80 bg-indigo-500/10 blur-3xl"></div>
             
             <div className="relative z-10 max-w-3xl mx-auto text-center">
-              <Sparkles className="text-primary h-10 w-10 mb-6 mx-auto" />
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Ready to join the <span className="gradient-text">music revolution</span>?
+              <Sparkles className="w-10 h-10 mx-auto mb-6 text-primary" />
+              <h2 className="mb-6 text-3xl font-bold md:text-4xl">
+                Ready to join the <span className="gradient-text">musik revolution</span>?
               </h2>
-              <p className="text-muted-foreground mb-8 text-lg">
-                Connect your wallet, explore the marketplace, and start creating or collecting music coins in a truly decentralized platform.
+              <p className="mb-8 text-lg text-muted-foreground">
+                Connect your wallet, explore the marketplace, and start creating or collecting musik coins in a truly decentralized platform.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/coins" className="sonic-button-primary py-3 px-8">
+              <div className="flex flex-col justify-center gap-4 sm:flex-row">
+                <Link href="/coins" className="px-8 py-3 sonic-button-primary">
                   <Coins size={20} />
                   <span>Create Your Coin</span>
                 </Link>
-                <Link href="/coins" className="sonic-button-outline py-3 px-8">
+                <Link href="/coins" className="px-8 py-3 sonic-button-outline">
                   <Music size={20} />
                   <span>Explore Coins</span>
                 </Link>

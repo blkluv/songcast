@@ -283,7 +283,7 @@ export default function ArtistsPage() {
 
   return (
     <main className="min-h-screen">
-      <div className="container mx-auto px-4 py-8">
+      <div className="container px-4 py-8 mx-auto">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -291,12 +291,12 @@ export default function ArtistsPage() {
           transition={{ duration: 0.5 }}
           className="mb-12"
         >
-          <h1 className="gradient-text text-4xl font-bold mb-2 flex items-center gap-3">
+          <h1 className="flex items-center gap-3 mb-2 text-4xl font-bold gradient-text">
             <User size={32} className="text-primary" />
-            <span>Music Artists</span>
+            <span>Musik Artists</span>
           </h1>
-          <p className="text-muted-foreground text-lg">
-            Discover artists and their music coins
+          <p className="text-lg text-muted-foreground">
+            Discover artists and their musik coins
           </p>
 
           {/* Search Bar */}
@@ -306,45 +306,45 @@ export default function ArtistsPage() {
               placeholder="Search artists by name or address..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="sonic-input pl-12 py-3 w-full"
+              className="w-full py-3 pl-12 sonic-input"
             />
-            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground" size={20} />
+            <Search className="absolute transform -translate-y-1/2 left-4 top-1/2 text-muted-foreground" size={20} />
           </div>
         </motion.div>
 
         {/* Content */}
         {(loading || knownCoinsLoading) ? (
-          <div className="sonic-card p-12 text-center">
-            <div className="spinner-md mx-auto mb-4"></div>
-            <h3 className="text-xl font-medium mb-2">Loading Artists</h3>
+          <div className="p-12 text-center sonic-card">
+            <div className="mx-auto mb-4 spinner-md"></div>
+            <h3 className="mb-2 text-xl font-medium">Loading Artists</h3>
             <p className="text-muted-foreground">
               {progressMessage || "Fetching artists and their coins..."}
             </p>
           </div>
         ) : error ? (
-          <div className="sonic-card p-12 text-center">
-            <div className="text-5xl mb-4 text-red-500">⚠️</div>
-            <h3 className="text-xl font-medium mb-2">Error Loading Artists</h3>
+          <div className="p-12 text-center sonic-card">
+            <div className="mb-4 text-5xl text-red-500">⚠️</div>
+            <h3 className="mb-2 text-xl font-medium">Error Loading Artists</h3>
             <p className="text-muted-foreground">
               {error.message || "There was an error fetching artists data."}
             </p>
           </div>
         ) : filteredArtists.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {filteredArtists.map((artist) => (
               <motion.div
                 key={artist.artistAddress}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 whileHover={{ y: -5 }}
-                className="sonic-card p-6"
+                className="p-6 sonic-card"
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/20">
                     <Music size={24} className="text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg"><ShortAddressLink address={artist.coins[0].artistAddress}/></h3>
+                    <h3 className="text-lg font-bold"><ShortAddressLink address={artist.coins[0].artistAddress}/></h3>
                     <p className="text-sm text-muted-foreground">
                       {artist.coins.length} {artist.coins.length === 1 ? 'coin' : 'coins'}
                     </p>
@@ -353,7 +353,7 @@ export default function ArtistsPage() {
 
                 <div className="space-y-4">
                   {artist.coins.map((coin) => (
-                    <div key={coin.coinAddress} className="sonic-card p-4">
+                    <div key={coin.coinAddress} className="p-4 sonic-card">
                       <div className="flex items-center gap-3">
                         <Coins size={20} className="text-primary" />
                         <div>
@@ -361,20 +361,20 @@ export default function ArtistsPage() {
                           <p className="text-sm text-muted-foreground">{coin.symbol}</p>
                         </div>
                       </div>
-                      <p className="text-sm mt-2 line-clamp-2">{coin.description}</p>
+                      <p className="mt-2 text-sm line-clamp-2">{coin.description}</p>
                     </div>
                   ))}
                 </div>
 
                 <button
                   onClick={() => setSelectedArtist(selectedArtist === artist.artistAddress ? null : artist.artistAddress)}
-                  className="sonic-button-outline w-full mt-4"
+                  className="w-full mt-4 sonic-button-outline"
                 >
                   {selectedArtist === artist.artistAddress ? 'Hide Details' : 'View Details'}
                 </button>
 
                 {selectedArtist === artist.artistAddress && (
-                  <div className="mt-4 grid grid-cols-1 gap-4">
+                  <div className="grid grid-cols-1 gap-4 mt-4">
                     {artist.coins.map((coin) => (
                       <MusicCoinCard
                         key={coin.coinAddress}
@@ -394,9 +394,9 @@ export default function ArtistsPage() {
             ))}
           </div>
         ) : (
-          <div className="sonic-card p-12 text-center">
-            <div className="text-5xl mb-4">🔍</div>
-            <h3 className="text-xl font-medium mb-2">No artists found</h3>
+          <div className="p-12 text-center sonic-card">
+            <div className="mb-4 text-5xl">🔍</div>
+            <h3 className="mb-2 text-xl font-medium">No artists found</h3>
             <p className="text-muted-foreground">
               {searchTerm 
                 ? "We couldn't find any artists matching your search criteria."
