@@ -2,7 +2,6 @@
 const nextConfig = {
   images: {
     domains: [
-      // IPFS gateways
       'xrp.mypinata.cloud',
       'gateway.pinata.cloud',
       'ipfs.io',
@@ -10,27 +9,17 @@ const nextConfig = {
       'dweb.link',
       'ipfs.filebase.io',
       'gateway.ipfs.io',
-      'ipfs.infura.io'
+      'ipfs.infura.io',
     ],
-    unoptimized: true, // Use unoptimized images for all domains
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '**',
-      },
-    ],
+    unoptimized: true,
   },
-  // Add other configuration options as needed
   reactStrictMode: true,
   experimental: {
-    // Support for OpenGraph image generation
     serverComponentsExternalPackages: ['sharp'],
   },
-  // Add environment variables here
   env: {
     NEXT_PUBLIC_BASE_URL: process.env.NEXT_PUBLIC_BASE_URL || 'https://jerseyclub.io',
   },
-  // Enable CORS for API routes that support Farcaster frame interactions
   async headers() {
     return [
       {
@@ -43,12 +32,10 @@ const nextConfig = {
       },
       {
         source: '/miniapp',
-        headers: [
-          { key: 'Access-Control-Allow-Origin', value: '*' },
-        ],
+        headers: [{ key: 'Access-Control-Allow-Origin', value: '*' }],
       },
     ];
   },
 };
 
-module.exports = nextConfig; 
+module.exports = nextConfig;
