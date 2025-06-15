@@ -54,7 +54,7 @@ export async function GET(request: NextRequest) {
     // List of IPFS gateways to try
     const gateways = [
       `https://gateway.pinata.cloud/ipfs/${cid}`,
-      `https://sapphire-raw-hawk-781.mypinata.cloud/ipfs/${cid}`,
+      `https://xrp.mypinata.cloud/ipfs/${cid}`,
       `https://ipfs.io/ipfs/${cid}`,
       `https://cloudflare-ipfs.com/ipfs/${cid}`,
       `https://dweb.link/ipfs/${cid}`

@@ -19,7 +19,7 @@ async function prefetchMetadata(metadataURI: string): Promise<boolean> {
   const gateways = [
     `https://ipfs.io/ipfs/${cid}`,
     `https://gateway.pinata.cloud/ipfs/${cid}`,
-    `https://sapphire-raw-hawk-781.mypinata.cloud/ipfs/${cid}`,
+    `https://xrp.mypinata.cloud/ipfs/${cid}`,
     `https://cloudflare-ipfs.com/ipfs/${cid}`,
     `https://ipfs.filebase.io/ipfs/${cid}`,
     `https://dweb.link/ipfs/${cid}`

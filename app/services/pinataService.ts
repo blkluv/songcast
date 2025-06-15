@@ -334,9 +334,9 @@ export function getIpfsUrl(uri: string): string {
   console.log('Original URI:', uri);
   
   // Define the gateway URL - ensure it ends with a slash
-  const GATEWAY_URL = (PINATA_GATEWAY || 'https://sapphire-raw-hawk-781.mypinata.cloud/ipfs/').endsWith('/') 
-    ? (PINATA_GATEWAY || 'https://sapphire-raw-hawk-781.mypinata.cloud/ipfs/') 
-    : (PINATA_GATEWAY || 'https://sapphire-raw-hawk-781.mypinata.cloud/ipfs/') + '/';
+  const GATEWAY_URL = (PINATA_GATEWAY || 'https://xrp.mypinata.cloud/ipfs/').endsWith('/') 
+    ? (PINATA_GATEWAY || 'https://xrp.mypinata.cloud/ipfs/') 
+    : (PINATA_GATEWAY || 'https://xrp.mypinata.cloud/ipfs/') + '/';
   
   // Remove any double slashes from the gateway URL
   const cleanGateway = GATEWAY_URL.replace(/([^:]\/)\/+/g, "$1");

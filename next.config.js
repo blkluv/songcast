@@ -3,7 +3,7 @@ const nextConfig = {
   images: {
     domains: [
       // IPFS gateways
-      'sapphire-raw-hawk-781.mypinata.cloud',
+      'xrp.mypinata.cloud',
       'gateway.pinata.cloud',
       'ipfs.io',
       'cloudflare-ipfs.com',
@@ -28,7 +28,7 @@ const nextConfig = {
   },
   // Add environment variables here
   env: {
-    NEXT_PUBLIC_BASE_URL: process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000',
+    NEXT_PUBLIC_BASE_URL: process.env.NEXT_PUBLIC_BASE_URL || 'https://jerseyclub.io',
   },
   // Enable CORS for API routes that support Farcaster frame interactions
   async headers() {
