@@ -334,7 +334,7 @@ export function getIpfsUrl(uri: string): string {
   console.log('Original URI:', uri);
   
   // Define the gateway URL - ensure it ends with a slash
-  const GATEWAY_URL = (PINATA_GATEWAY || 'https://xrp.mypinata.cloud/ipfs/').endsWith('/') 
+  const GATEWAY_URL = (PINATA_GATEWAY || 'https://gateway.pinata.cloud/ipfs/').endsWith('/') 
     ? (PINATA_GATEWAY || 'https://xrp.mypinata.cloud/ipfs/') 
     : (PINATA_GATEWAY || 'https://xrp.mypinata.cloud/ipfs/') + '/';
   
